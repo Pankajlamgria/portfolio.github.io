@@ -1,0 +1,211 @@
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding:0;
+}
+body{
+    background-color: black;
+}
+.navigation{
+
+    z-index: 100;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 50px;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.bar{
+    margin-left: 150px;
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.bar a:hover{
+    color: rgb(27, 255, 255);
+}
+.bar a{
+
+    opacity: 0;
+    transition: .3s;
+    animation: floattop .5s ease calc(0.2s * var(--i)) 1 forwards;
+}
+.navigation a{
+    font-size: 22px;
+    text-decoration: none;
+    font-weight: bold;
+    color:white;
+}
+.navigation>a{
+    position: relative;
+    animation: floatright 0.8s ease 1 forwards;
+}
+.navigation>a:hover{
+    cursor:default;
+}
+.navigation>a  ,.bar a:nth-of-type(1){
+    color: rgb(27, 255, 255);
+}
+.content{
+    display: flex;
+    margin-top: 200px;
+    margin-left: 100px;
+}
+.text{
+    max-width: 50%;
+}
+.text h2,.text h3,.text h4{
+    color: white;
+    margin-bottom: 10px;
+}
+.text h1{
+    opacity: 0;
+    animation: floatleft .5s ease forwards;
+    animation-delay: 0.7s;
+}
+.text h1,.text h2,.text h3,.text h4:hover{
+    cursor: default;
+}
+.text h4{
+    opacity: 0;
+    animation: floatright1 .5s ease forwards;
+    animation-delay: 0.7s;
+}
+.text h3{
+    font-size: 22px;
+    transition: .3s;
+    opacity: 0;
+    animation: floattop .5s ease forwards;
+    animation-delay: 0.7s;
+}
+.text h2{
+    display: inline-block;
+    opacity: 0;
+    transition: .3s;
+    animation: floatbottom .5s ease forwards;
+    animation-delay: 0.7s;
+}
+.text h1 ,.text h3 span{
+    text-shadow: 0px 0px 20px rgb(27, 255, 255);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+    color: rgb(27, 255, 255);
+    margin-bottom: 10px;
+}
+.img img{
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    margin:auto;
+    box-shadow: 1px 1px 30px rgb(14, 255, 255);
+    transition: .3s;
+    opacity: 0;
+    animation: zoomin 1s ease forwards,floatimg 4s ease forwards infinite;
+    animation-delay: .7s,2s;
+
+}
+.img{
+
+    position: relative;
+    bottom:50px;
+    left: 70px;  
+} 
+.icon{
+    margin-top: 40px;
+    display: flex;
+}
+.icon a{
+    transition:0.3;
+    opacity: 0;
+    animation: floattop .5s ease forwards;
+    animation-delay: 0.7s;
+    margin-right: 4px;
+    text-decoration: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color:rgb(14, 255, 255) ;
+}
+.icon a:hover{
+    box-shadow: 0px 0px 20px rgb(14, 255, 255);
+}
+@keyframes floatright{
+    0%{
+        opacity: 0;
+        left: -200px;
+    }
+    100%{
+        opacity: 1;
+        left: -80px;
+    }
+}
+@keyframes floatright1{
+    0%{
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+@keyframes floattop{
+    0%{
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes floatbottom{
+    0%{
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes zoomin{
+    0%{
+        opacity: 0;
+        transform:scale(0);
+    }
+    100%{
+        opacity: 1;
+        transform:scale(1);
+    }
+}
+
+@keyframes floatleft{
+    0%{
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes floatimg{
+    0%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(-25px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
